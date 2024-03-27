@@ -6,11 +6,12 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:49:08 by elsikira          #+#    #+#             */
-/*   Updated: 2024/03/26 16:56:17 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/03/27 12:31:41 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "ft_printf/ft_printf.h"
 
 int	main(int argc, char *argv[])
 {
@@ -21,6 +22,6 @@ int	main(int argc, char *argv[])
 	if (argc > 2)
 	{
 		if (ft_check_all_errors(argc, argv) == 1)
-			return(ft_printf(stderr, "Error\n"));
+			return(ft_printf("Error\n", stderr));
 	}
 }

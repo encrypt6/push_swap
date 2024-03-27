@@ -6,7 +6,7 @@
 #    By: elsikira <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/26 15:23:33 by elsikira          #+#    #+#              #
-#    Updated: 2024/03/26 15:47:59 by elsikira         ###   ########.fr        #
+#    Updated: 2024/03/27 12:18:09 by elsikira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@ NAME = push_swap
 
 MAIN_SRC = main.c
 
-SRCS = 
+SRCS = errors.c 
 
 LIBFT_PATH = libft
 
-PRINTFT_PATH = ft_printf
+PRINTF_PATH = ft_printf
 
 OBJS = $(SRCS:.c=.o)
 

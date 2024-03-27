@@ -6,9 +6,12 @@
 #    By: elsikira <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/26 15:23:33 by elsikira          #+#    #+#              #
-#    Updated: 2024/03/27 12:18:09 by elsikira         ###   ########.fr        #
+#    Updated: 2024/03/27 15:34:51 by elsikira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+RED=\033[0;31m
+GREEN=\033[0;32m
 
 NAME = push_swap
 
@@ -18,17 +21,43 @@ SRCS = errors.c
 
 LIBFT_PATH = libft
 
-PRINTF_PATH = ft_printf
+FT_PRINTF_PATH = ft_printf
 
 OBJS = $(SRCS:.c=.o)
+
+MAIN_OBJ = $(MAIN_SRC:.c=.o)
 
 CC = cc
 
 RM = rm -rf
 
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror -g3 -I
 
 all: libft ft_printf $(NAME)
 
+$(NAME): $(OBJS) $(MAIN_OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MAIN_OBJ)
+
+libft:
+	$(MAKE) -C $(LIBFT_PATH)
+	@printf "$(GREEN)Compilation of libft is complete.\n\033[0m"
+
+ft_printf:
+	$(MAKE) -C $(FT_PRINTF_PATH)
+	@printf "$(GREEN)Compilation of ft_printf is complete.\n\033[0m"
+
+clean:
+	$(RM) $(OBJS) $(MAIN_OBJ)
+	cd $(LIBFT_PATH) && make clean
+	cd $(FT_PRINTF_PATH) && make clean
+	@printf "$(RED)All files are cleaned.\n\033[0m"
+
+fclean: clean
+	$(RM) $(NAME)
+	cd $(LIBFT_PATH) && make fclean
+	cd $(FT_PRINTF_PATH) && make fclean
+	@printf "$(RED)All files are cleaned.\n\033[0m"
+
+re: fclean all
 .PHONY: all clean fclean re libft ft_printf
 

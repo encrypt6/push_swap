@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 16:56:45 by elsikira          #+#    #+#             */
-/*   Updated: 2024/03/27 12:30:40 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/03/27 14:27:52 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ int	ft_dupplicates_error(int argc, char *argv[])
 {
 	
 }*/
+
+/*int	ft_printf(char *format, ...);
+int	ft_dprintf(int fd, char *format, ...); // fd = 2 = STDERR;
+void	ft_putendl_fd(char *str); // "ERROR"*/
 
 int	ft_check_all_errors(int argc, char *argv[])
 {

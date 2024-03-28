@@ -6,7 +6,7 @@
 #    By: elsikira <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/26 15:23:33 by elsikira          #+#    #+#              #
-#    Updated: 2024/03/28 12:08:29 by elsikira         ###   ########.fr        #
+#    Updated: 2024/03/28 12:16:18 by elsikira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ CFLAGS = -Wall -Wextra -Werror -g3 -Iinclude
 all: libft ft_printf $(NAME)
 
 $(NAME): $(OBJS) $(MAIN_OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MAIN_OBJ) -Llibft -lft -Lft_printf -lftprintf
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MAIN_OBJ) -Llibft -lft  -Lft_printf -lftprintf
 	@printf "$(GREEN)Compilation of push_swap is complete.\n\033[0m"
 
 

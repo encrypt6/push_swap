@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 16:56:45 by elsikira          #+#    #+#             */
-/*   Updated: 2024/03/27 14:27:52 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/03/28 14:05:29 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ int	ft_not_int_error(int argc, char *argv[])
 	while (i < argc)
 	{
 		j = 0;
-		while(argv[j] != NULL)
+		while (argv[i][j])
 		{
-			if (!ft_isdigit(argv[i][j] && argv[i][j] != '-'))
-					return (0);
+			if (!ft_isdigit(argv[i][j] && argv[i][j] != '-') && argv[i][j] != '+')
+				return (1);
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 /*int	ft_bigger_than_int_error(int argc, char *argv[])

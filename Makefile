@@ -6,7 +6,7 @@
 #    By: elsikira <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/26 15:23:33 by elsikira          #+#    #+#              #
-#    Updated: 2024/03/27 15:34:51 by elsikira         ###   ########.fr        #
+#    Updated: 2024/03/28 12:08:29 by elsikira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,12 +31,16 @@ CC = cc
 
 RM = rm -rf
 
-CFLAGS = -Wall -Wextra -Werror -g3 -I
+.PHONY: all clean fclean re libft ft_printf
+
+CFLAGS = -Wall -Wextra -Werror -g3 -Iinclude
 
 all: libft ft_printf $(NAME)
 
 $(NAME): $(OBJS) $(MAIN_OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MAIN_OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MAIN_OBJ) -Llibft -lft -Lft_printf -lftprintf
+	@printf "$(GREEN)Compilation of push_swap is complete.\n\033[0m"
+
 
 libft:
 	$(MAKE) -C $(LIBFT_PATH)
@@ -59,5 +63,4 @@ fclean: clean
 	@printf "$(RED)All files are cleaned.\n\033[0m"
 
 re: fclean all
-.PHONY: all clean fclean re libft ft_printf
 

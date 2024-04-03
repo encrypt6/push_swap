@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 16:56:45 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/04 01:04:12 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/04 01:27:22 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int	ft_not_int_error(int argc, char *argv[])
 
 int	ft_overunderflow_error(int argc, char *argv[])
 {
-	int	i;
-	long 	x;
+	int		i;
+	long	x;
 
 	i = 1;
 	while (i < argc)
@@ -50,16 +50,8 @@ int	ft_overunderflow_error(int argc, char *argv[])
 			return (1);
 		i++;
 	}
-      return (0);
+	return (0);
 }
-/*int	ft_dupplicates_error(int argc, char *argv[])
-{
-	
-}*/
-
-/*int	ft_printf(char *format, ...);
-int	ft_dprintf(int fd, char *format, ...); // fd = 2 = STDERR;
-void	ft_putendl_fd(char *str); // "ERROR"*/
 
 int	ft_check_all_errors(int argc, char *argv[])
 {
@@ -67,7 +59,7 @@ int	ft_check_all_errors(int argc, char *argv[])
 		return (1);
 	if (ft_overunderflow_error(argc, argv))
 		return (1);
-	/*if (ft_dupplicates_error(argc, argv))
-		return (1);*/
+	if (ft_dupplicates_error(argc, argv))
+		return (1);
 	return (0);
 }

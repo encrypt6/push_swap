@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 16:56:45 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/04 04:26:04 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/04 04:31:02 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,11 @@ int	ft_overunderflow_error(int argc, char *argv[])
 int	ft_dupplicates_error(int argc, char *argv[])
 {
 	int	i;
+	int	j;
 
 	i = 1;
 	while (i < argc - 1)
 	{
-		int	j;
 		j = i + 1;
 		while (j < argc)
 		{
@@ -74,12 +74,12 @@ int	ft_dupplicates_error(int argc, char *argv[])
 }
 
 int	ft_check_all_errors(int argc, char *argv[])
-{
+{	
+	if (ft_dupplicates_error(argc, argv))
+		return (1);
 	if (ft_not_int_error(argc, argv))
 		return (1);
 	if (ft_overunderflow_error(argc, argv))
-		return (1);
-	if (ft_dupplicates_error(argc, argv))
 		return (1);
 	return (0);
 }

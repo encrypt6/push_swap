@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/03/29 15:19:20 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/04 03:40:29 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
 int	main(int argc, char *argv[]);
 int	ft_check_all_errors(int argc, char *argv[]);
 int	ft_not_int_error(int argc, char *argv[]);
+int	ft_dupplicates_error(int argc, char *argv[]);
 
 #endif

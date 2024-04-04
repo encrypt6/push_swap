@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 16:56:45 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/04 01:56:25 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/04 03:58:35 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,14 @@ int	ft_dupplicates_error(int argc, char *argv[])
 	int	i;
 
 	i = 1;
-	while (i < argc)
+	while (i < argc - 1)
 	{
 		int	j;
 		j = i + 1;
 		while (j < argc)
 		{
-			if (argv[i] == argv[j])
+			//if (ft_strcmp(argv[i], argv[j]) == 0)
+			if (strcmp(argv[i], argv[j]) == 0)
 				return (1);
 			j++;
 		}

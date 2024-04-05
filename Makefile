@@ -6,7 +6,7 @@
 #    By: elsikira <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/26 15:23:33 by elsikira          #+#    #+#              #
-#    Updated: 2024/03/28 12:16:18 by elsikira         ###   ########.fr        #
+#    Updated: 2024/04/05 00:50:40 by elsikira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME = push_swap
 
 MAIN_SRC = main.c
 
-SRCS = errors.c 
+SRCS = args_errors.c 
 
 LIBFT_PATH = libft
 

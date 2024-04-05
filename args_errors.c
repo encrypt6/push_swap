@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   args_errors.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/26 16:56:45 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/04 04:31:02 by elsikira         ###   ########.fr       */
+/*   Created: 2024/04/05 18:48:30 by elsikira          #+#    #+#             */
+/*   Updated: 2024/04/05 18:58:15 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,10 @@ int	ft_check_all_errors(int argc, char *argv[])
 	if (ft_overunderflow_error(argc, argv))
 		return (1);
 	return (0);
+}
+
+void	print_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
 }

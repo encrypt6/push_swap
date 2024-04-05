@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:49:08 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/04 01:23:55 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/05 19:02:38 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ int	main(int argc, char *argv[])
 	int	i;
 
 	i = 0;
-	if (argc <= 2)
-		return (write(2, "Error\n", 6));
+	if (argc == 1)
+		return (0);
+	else if (argc <= 2)
+		print_error();
 	else if (argc > 2)
 	{
 		if (ft_check_all_errors(argc, argv) == 1)
-			return (write(2, "Error\n", 6));
+			print_error();
 	}
 }

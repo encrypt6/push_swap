@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:19:09 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/11 19:07:16 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/11 19:11:14 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ struct	s_Node	*create_node(int data)
 	return (new_node);
 }
 
-int	is_empty(struct Node *top)
+int	is_empty(struct s_Node *top)
 {
 	return (top == NULL);
 }
 
-void	push(struct Node **top, int data)
+void	push(struct s_Node **top, int data)
 {
 	struct s_Node	*new_node;
 
@@ -52,16 +52,16 @@ int	pop(struct s_Node **top)
 		printf("Stack underflow!\n");
 		return (INT_MIN);
 	}
-	temp = top;
+	temp = *top;
 	popped = temp->data;
 	*top = (*top)->next;
 	free(temp);
 	return (popped);
 }
 
-void	display_stack(struct Node *top)
+void	display_stack(struct s_Node *top)
 {
-	struct Node	*current;
+	struct s_Node	*current;
 
 	current = top;
 	if (is_empty(top))
@@ -80,13 +80,13 @@ void	display_stack(struct Node *top)
 
 int	main(void)
 {
-	struct Node	*top;
+	struct s_Node	*top;
 
 	top = NULL;
 	push(&top, 10);
 	push(&top, 20);
 	push(&top, 30);
-	displayStack(top);
+	display_stack(top);
 	printf("%d popped from the stack.\n", pop(&top));
 	display_stack(top);
 	return (0);

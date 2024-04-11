@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:19:09 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/11 19:04:50 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/11 19:07:16 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ int	is_empty(struct Node *top)
 
 void	push(struct Node **top, int data)
 {
-	struct Node	*new_node;
-	new node = create_node(data);
+	struct s_Node	*new_node;
+
+	new_node = create_node(data);
 	new_node->next = *top;
 	*top = new_node;
 	printf("%d pushed to the stack.\n", data);

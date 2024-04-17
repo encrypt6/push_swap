@@ -6,7 +6,7 @@
 #    By: elsikira <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/26 15:23:33 by elsikira          #+#    #+#              #
-#    Updated: 2024/04/17 17:00:41 by elsikira         ###   ########.fr        #
+#    Updated: 2024/04/17 20:16:41 by elsikira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,13 +54,13 @@ clean:
 	$(RM) $(OBJS) $(MAIN_OBJ)
 	cd $(LIBFT_PATH) && make clean
 	cd $(FT_PRINTF_PATH) && make clean
-	@printf "$(RED)All files are cleaned.\n\033[0m"
+	@printf "$(GREEN)All files are cleaned.\n\033[0m"
 
 fclean: clean
 	$(RM) $(NAME)
 	cd $(LIBFT_PATH) && make fclean
 	cd $(FT_PRINTF_PATH) && make fclean
-	@printf "$(RED)All files are cleaned.\n\033[0m"
+	@printf "$(GREEN)All files are cleaned.\n\033[0m"
 
 re: fclean all
 

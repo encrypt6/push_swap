@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04i/16 16:29:22 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/17 12:48:02 by elsikira         ###   ########.fr       */
+/*   Created: 2024/04i/16 16:29:22 by elsikira          #+#    #+#            */
+/*   Updated: 2024/04/17 12:53:02 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ t_node	*ft_make_list(int argc, char *argv[])
 void	ft_print_and_free_list(t_node *list)
 {
 	t_node	*run;
+	t_node	*temp;
 
 	run = list;
 	while (run != NULL)
 	{
 		ft_printf("%s\n", run->content);
-		t_node	*temp;
-		temp =  run;
+		temp = run;
 		run = run->next;
 		free(temp);
 	}

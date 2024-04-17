@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:49:08 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/16 17:40:33 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:09:03 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char *argv[])
 	}
 }
 */
-	struct s_node	*list;
+	t_node	*list;
 
 	list = ft_make_list(argc, argv);
 	ft_print_and_free_list(list);

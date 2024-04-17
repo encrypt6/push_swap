@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/16 17:44:15 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:07:13 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "libft/libft.h"
 # include "ft_printf/ft_printf.h"
 
-struct	s_node
+typedef struct	s_node
 {
 	void			*content;
 	struct s_node	*next;

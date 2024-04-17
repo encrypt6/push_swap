@@ -5,18 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 16:29:22 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/16 17:42:55 by elsikira         ###   ########.fr       */
+/*   Created: 2024/04i/16 16:29:22 by elsikira          #+#    #+#             */
+/*   Updated: 2024/04/17 12:48:02 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-struct t_node	*ft_make_list(int argc, char *argv[])
+t_node	*ft_make_list(int argc, char *argv[])
 {
-	struct t_node	*list;
-	struct t_node	*end;
-	struct t_node	*ptr_node;
+	t_node	*list;
+	t_node	*end;
+	t_node	*ptr_node;
 	int		i;
 
 	list = NULL;
@@ -43,15 +43,15 @@ struct t_node	*ft_make_list(int argc, char *argv[])
 	return (list);
 }
 
-void	ft_print_and_free_list(struct t_node *list)
+void	ft_print_and_free_list(t_node *list)
 {
-	struct t_node	*run;
+	t_node	*run;
 
 	run = list;
 	while (run != NULL)
 	{
 		ft_printf("%s\n", run->content);
-		struct t_node	*temp;
+		t_node	*temp;
 		temp =  run;
 		run = run->next;
 		free(temp);

@@ -6,7 +6,7 @@
 #    By: elsikira <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/26 15:23:33 by elsikira          #+#    #+#              #
-#    Updated: 2024/04/16 17:25:06 by elsikira         ###   ########.fr        #
+#    Updated: 2024/04/17 17:00:41 by elsikira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME = push_swap
 
 MAIN_SRC = main.c
 
-SRCS = args_errors.c ft_make_list.c 
+SRCS = args_errors.c ft_make_lists.c 
 
 LIBFT_PATH = libft
 

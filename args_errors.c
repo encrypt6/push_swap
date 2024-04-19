@@ -6,11 +6,32 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 18:48:30 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/05 18:58:15 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:28:55 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/* functions to handle errors
+   
+
+                            */
+int	ft_check_errors(t_stack_node *a[], char *argv[])
+{
+	long	x;
+
+	while (argv[])
+	{
+		x = ft_atol(argv[]);
+		if (ft_not_int_error(a[], (int)x))
+			ft_print_error_free();
+		if (x > INT_MAX || x < INT_MIN)
+			ft_print_error_free();
+		if (ft_dupplicates_error(a[], (int)x))
+			ft_print_error_free();
+	}
+	return (0);
+}
 
 int	ft_not_int_error(int argc, char *argv[])
 {
@@ -30,24 +51,6 @@ int	ft_not_int_error(int argc, char *argv[])
 			j++;
 		}
 		j = 0;
-		i++;
-	}
-	return (0);
-}
-
-int	ft_overunderflow_error(int argc, char *argv[])
-{
-	int		i;
-	long	x;
-
-	i = 1;
-	while (i < argc)
-	{
-		x = ft_atol(argv[i]);
-		if (x > INT_MAX)
-			return (1);
-		if (x < INT_MIN)
-			return (1);
 		i++;
 	}
 	return (0);
@@ -73,19 +76,9 @@ int	ft_dupplicates_error(int argc, char *argv[])
 	return (0);
 }
 
-int	ft_check_all_errors(int argc, char *argv[])
-{	
-	if (ft_dupplicates_error(argc, argv))
-		return (1);
-	if (ft_not_int_error(argc, argv))
-		return (1);
-	if (ft_overunderflow_error(argc, argv))
-		return (1);
-	return (0);
-}
-
-void	print_error(void)
+void	ft_print_error_free(void)
 {
+	ft_free_stack(a);
 	write(2, "Error\n", 6);
-	exit(1);
+	return(1);
 }

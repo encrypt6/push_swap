@@ -6,14 +6,13 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 18:48:30 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/23 18:46:56 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/23 19:42:15 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* functions to handle errors   */
-void	ft_all_check_errors(t_stack **a, char **argv)
+void	ft_check_all_errors(t_stack **a, char **argv)
 {
 	long	x;
 	int		i;
@@ -24,10 +23,11 @@ void	ft_all_check_errors(t_stack **a, char **argv)
 		x = ft_atol(argv[i]);
 		if (ft_not_int_error(&argv[i]))
 			ft_print_error_free(a);
-		if (x > INT_MAX || x < INT_MIN)
+		/*if (x > INT_MAX || x < INT_MIN)
 			ft_print_error_free(a);
 		if (ft_dupplicates_error(*a))
 			ft_print_error_free(a);
+		*/
 		ft_create_node(a, x);
 		++i;
 	}
@@ -40,20 +40,23 @@ int	ft_not_int_error(char **argv)
 
 	i = 1;
 	j = 0;
-	while (argv[i][j])
+	while (argv[i])
 	{
-		if (j == 0 && (argv[i][j] == '-' || argv[i][j] == '+'))
+		while (argv[i][j])
+		{
+			if (j == 0 && (argv[i][j] == '-' || argv[i][j] == '+'))
+				j++;
+			if (!ft_isdigit(argv[i][j]))
+				return (1);
 			j++;
-		if (!ft_isdigit(argv[i][j]))
-			return (1);
-		j++;
 		}
-	j = 0;
-	i++;
+		j = 0;
+		i++;
+	}
 	return (0);
 }
 
-int	ft_dupplicates_error(t_stack *a)
+/*int	ft_dupplicates_error(t_stack *a)
 {
 	t_stack	*next_node;
 
@@ -72,10 +75,27 @@ int	ft_dupplicates_error(t_stack *a)
 	}
 	return (0);
 }
+*/
+void	ft_free_stack (t_stack **stack)
+{
+	t_stack	*current;
+	t_stack	*tmp;
+
+	if (stack == NULL)
+		return ;
+	current = *stack;
+	while (current)
+	{
+		tmp = current->next;
+		free(current);
+		current = tmp;
+	}
+	*stack = NULL;
+}
 
 void ft_print_error_free(t_stack **a)
 {
-	free(a);
+	ft_free_stack(a);
 	write(2, "Error\n", 6);
 }
 

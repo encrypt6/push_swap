@@ -6,79 +6,76 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 18:48:30 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/19 13:28:55 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/23 18:46:56 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* functions to handle errors
-   
-
-                            */
-int	ft_check_errors(t_stack_node *a[], char *argv[])
+/* functions to handle errors   */
+void	ft_all_check_errors(t_stack **a, char **argv)
 {
 	long	x;
+	int		i;
 
-	while (argv[])
+	i = 0;
+	while (argv[i])
 	{
-		x = ft_atol(argv[]);
-		if (ft_not_int_error(a[], (int)x))
-			ft_print_error_free();
+		x = ft_atol(argv[i]);
+		if (ft_not_int_error(&argv[i]))
+			ft_print_error_free(a);
 		if (x > INT_MAX || x < INT_MIN)
-			ft_print_error_free();
-		if (ft_dupplicates_error(a[], (int)x))
-			ft_print_error_free();
+			ft_print_error_free(a);
+		if (ft_dupplicates_error(*a))
+			ft_print_error_free(a);
+		ft_create_node(a, x);
+		++i;
 	}
-	return (0);
 }
 
-int	ft_not_int_error(int argc, char *argv[])
+int	ft_not_int_error(char **argv)
 {
 	int	i;
 	int	j;
 
 	i = 1;
 	j = 0;
-	while (i < argc)
+	while (argv[i][j])
 	{
-		while (argv[i][j])
-		{
-			if (j == 0 && (argv[i][j] == '-' || argv[i][j] == '+'))
-				j++;
-			if (!ft_isdigit(argv[i][j]))
-				return (1);
+		if (j == 0 && (argv[i][j] == '-' || argv[i][j] == '+'))
 			j++;
+		if (!ft_isdigit(argv[i][j]))
+			return (1);
+		j++;
 		}
-		j = 0;
-		i++;
+	j = 0;
+	i++;
+	return (0);
+}
+
+int	ft_dupplicates_error(t_stack *a)
+{
+	t_stack	*next_node;
+
+	if (a == NULL) //if stack empty
+		return (0);
+	while (a) // while browsing stack a
+	{
+		next_node = a->next; //next_node is the 
+		while (next_node)
+		{
+			if (a->value == next_node->value) // if value in node a equals to value in next_node
+				return (1);
+			next_node = next_node->next; //iterate to next node, a becomes next
+		}
+		a = a->next; //iterate to next node, a becomes next
 	}
 	return (0);
 }
 
-int	ft_dupplicates_error(int argc, char *argv[])
+void ft_print_error_free(t_stack **a)
 {
-	int	i;
-	int	j;
-
-	i = 1;
-	while (i < argc - 1)
-	{
-		j = i + 1;
-		while (j < argc)
-		{
-			if (ft_strcmp(argv[i], argv[j]) == 0)
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-
-void	ft_print_error_free(void)
-{
-	ft_free_stack(a);
+	free(a);
 	write(2, "Error\n", 6);
-	return(1);
 }
+

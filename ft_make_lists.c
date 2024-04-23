@@ -6,56 +6,42 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04i/16 16:29:22 by elsikira          #+#    #+#            */
-/*   Updated: 2024/04/17 17:27:26 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/23 18:37:54 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*ft_make_list(int argc, char *argv[])
+t_stack	*ft_get_prev_node(t_stack *head)
 {
-	t_node	*list_a;
-	t_node	*list_b;
-	t_node	*end;
-	t_node	*ptr_node;
-	int		i;
-
-	list_a = NULL;
-	list_b = NULL;
-	end = NULL;
-	i = 1;
-	while (i < argc)
-	{
-		ptr_node = malloc(sizeof(*list_a));
-		ptr_node->content = malloc(ft_strlen(argv[i] + 1));
-		ft_strcpy(ptr_node->content, argv[i]);
-		ptr_node->next = NULL;
-		if (list_a == NULL)
-		{
-			list_a = ptr_node;
-			end = ptr_node;
-		}
-		else
-		{
-			end->next = ptr_node;
-			end = ptr_node;
-		}
-		i++;
-	}
-	return (list_a);	
+	if (head == NULL)
+		return (NULL);
+	while (head->next)
+		head = head->next;//while pointing to next, the previous node is head
+	return (head);
 }
 
-void	ft_print_and_free_list(t_node *list_a)
+void	ft_create_node(t_stack **a, int nbr)
 {
-	t_node	*run;
-	t_node	*temp;
+	t_stack	*node;
+	t_stack	*prev_node;
 
-	run = list_a;
-	while (run != NULL)
+	if (a == NULL) // if s
+		return ;
+	node = malloc(sizeof(t_stack));
+	if (node == NULL)
+		return ;
+	node->next = NULL; // the new node points to NULL
+	node->value = nbr; // value is the nbr passed
+	if (*a == NULL) // if stack is empty
 	{
-		ft_printf("%s\n", run->content);
-		temp = run;
-		run = run->next;
-		free(temp);
+		*a = node;
+		node->prev = NULL; //pointer to prev is NULL
+	}
+	else // linking nodes
+	{
+		prev_node = ft_get_prev_node(*a); //searches for the previous node in the stack
+		prev_node->next = node; //previous pointing to next node becomes node
+		node->prev = prev_node; //node pointing to previous becomes previous node
 	}
 }

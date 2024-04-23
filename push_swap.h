@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/19 16:36:09 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/23 18:38:19 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,17 @@
 typedef struct	s_stack
 {
 	int		value;
-	int		i;
 	struct s_stack *next;
 	struct s_stack *prev;
 }t_stack;
 
-int				main(int argc, char *argv[]);
-int				ft_check_all_errors(int argc, char *argv[]);
-int				ft_not_int_error(int argc, char *argv[]);
-int				ft_dupplicates_error(int argc, char *argv[]);
-void			print_error(void);
+int					main(int argc, char **argv);
+void				ft_check_all_errors(t_stack **a, char **argv);
+int					ft_not_int_error(char **argv);
+int					ft_dupplicates_error(t_stack *a);
+void				ft_print_error_free(t_stack **a);
 
-t_node   		*ft_make_list(int argc, char *argv[]);
-void			ft_print_and_free_list(t_node *list_a);
+t_stack   			*ft_get_prev_node(t_stack *head);
+void				ft_create_node(t_stack **a, int nbr);
 
 #endif

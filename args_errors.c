@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 18:48:30 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/23 19:42:15 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:06:16 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,6 @@ void ft_print_error_free(t_stack **a)
 {
 	ft_free_stack(a);
 	write(2, "Error\n", 6);
+	exit(0);
 }
 

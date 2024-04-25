@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/23 19:32:19 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:27:24 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct	s_stack
 int					main(int argc, char **argv);
 void				ft_check_all_errors(t_stack **a, char **argv);
 int					ft_not_int_error(char **argv);
-int					ft_dupplicates_error(t_stack *a);
+int					ft_dupplicates_error(t_stack *a, int nbr);
 void				ft_print_error_free(t_stack **a);
 void				ft_free_stack(t_stack **stack);
 

@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 18:48:30 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/25 13:06:16 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:29:39 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,20 @@
 
 void	ft_check_all_errors(t_stack **a, char **argv)
 {
-	long	x;
+	long	nbr;
 	int		i;
 
 	i = 0;
 	while (argv[i])
 	{
-		x = ft_atol(argv[i]);
+		nbr = ft_atol(argv[i]);
 		if (ft_not_int_error(&argv[i]))
 			ft_print_error_free(a);
-		/*if (x > INT_MAX || x < INT_MIN)
+		if (nbr > INT_MAX || nbr < INT_MIN)
 			ft_print_error_free(a);
-		if (ft_dupplicates_error(*a))
+		if (ft_dupplicates_error(*a, nbr))
 			ft_print_error_free(a);
-		*/
-		ft_create_node(a, x);
+		ft_create_node(a, nbr);
 		++i;
 	}
 }
@@ -56,26 +55,19 @@ int	ft_not_int_error(char **argv)
 	return (0);
 }
 
-/*int	ft_dupplicates_error(t_stack *a)
+int	ft_dupplicates_error(t_stack *a, int nbr)
 {
-	t_stack	*next_node;
-
 	if (a == NULL) //if stack empty
 		return (0);
-	while (a) // while browsing stack a
+	while (a)
 	{
-		next_node = a->next; //next_node is the 
-		while (next_node)
-		{
-			if (a->value == next_node->value) // if value in node a equals to value in next_node
-				return (1);
-			next_node = next_node->next; //iterate to next node, a becomes next
-		}
-		a = a->next; //iterate to next node, a becomes next
+		if (a->value == nbr)
+			return (1);
+		a = a->next;
 	}
 	return (0);
 }
-*/
+
 void	ft_free_stack (t_stack **stack)
 {
 	t_stack	*current;

@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:49:08 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/08 16:49:13 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/05/08 19:27:04 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,20 @@ int	main(int argc, char *argv[])
 	ft_check_all_errors_create_nodes(&a, argv + 1);
 	++argv;
 	//ft_sort_algo
-	/*while(*argv)
+	while(*argv)
 	{
 		printf("%d ", ft_atoi(*argv));
 		++argv;
 	}
 	//sa(a);
 	//ra(&a);
-	//rra(&a);
+	rra(&a, PRINT);
 	printf("\n");
 	while (a) 
 	{
         printf("%d ", a->value);
         a = a->next;
-    }*/
+    }
 	ft_free_stack(&a);
 	return (EXIT_SUCCESS);
 }

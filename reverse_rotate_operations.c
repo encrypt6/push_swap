@@ -6,13 +6,13 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:26:24 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/08 16:32:23 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/05/08 19:26:43 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(t_stack **a)
+void	rra(t_stack **a, int print)
 {
 	t_stack	*second_last;
 	second_last = *a;
@@ -24,10 +24,11 @@ void	rra(t_stack **a)
 	second_last->next->next = *a;
 	*a = second_last->next;
 	second_last->next = NULL;
-	write(1, "rra\n", 4);
+	if (print == PRINT)
+		ft_printf("rra\n");
 }
 
-void	rrb(t_stack **b)
+void	rrb(t_stack **b, int print)
 {
 	t_stack	*second_last;
 	second_last = *b;
@@ -39,12 +40,16 @@ void	rrb(t_stack **b)
 	second_last->next->next = *b;
 	*b = second_last->next;
 	second_last->next = NULL;
-	write(1, "rrb\n", 4);
+	if (print == PRINT)
+		ft_printf("rrb\n");
 }
 
-void	rrr(t_stack **a, t_stack **b)
+void	rrr(t_stack **a, t_stack **b, int print)
 {
-	rra(a);
-	rrb(b);
-	write(1, "rrr\n", 4);
+	if (!a || !b)
+		return ;
+	rra(a, DONT_PRINT);
+	rrb(b, DONT_PRINT);
+	if (print == PRINT)
+		ft_printf("rrr\n");
 }

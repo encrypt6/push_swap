@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/08 16:51:52 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/05/08 19:25:03 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 
 # include "libft/libft.h"
 # include "ft_printf/ft_printf.h"
+
+# define PRINT 1
+# define DONT_PRINT 0
 
 typedef struct s_stack
 {
@@ -34,13 +37,13 @@ void				ft_free_stack(t_stack **stack);
 t_stack				*ft_get_prev_node(t_stack *head);
 void				ft_create_nodes(t_stack **a, int nbr);
 
-void				sa(t_stack **a);
-void				sb(t_stack **b);
-void				ss(t_stack **a, t_stack **b);
-void				ra(t_stack **a);
-void				rb(t_stack **b);
-void				rr(t_stack **a, t_stack **b);
-void				rra(t_stack **a);
-void				rrb(t_stack **b);
-void				rrr(t_stack **a, t_stack **b);
+void				sa(t_stack **a, int print);
+void				sb(t_stack **b, int print);
+void				ss(t_stack **a, t_stack **b, int print);
+void				ra(t_stack **a, int print);
+void				rb(t_stack **b, int print);
+void				rr(t_stack **a, t_stack **b, int print);
+void				rra(t_stack **a, int print);
+void				rrb(t_stack **b, int print);
+void				rrr(t_stack **a, t_stack **b, int print);
 #endif

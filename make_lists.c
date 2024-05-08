@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:29:22 by elsikira          #+#    #+#            */
-/*   Updated: 2024/05/08 15:18:40 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:52:34 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,3 @@ void	ft_create_nodes(t_stack **a, int nbr)
 		node->prev = prev_node; //node pointing to previous becomes previous node
 	}
 }
-

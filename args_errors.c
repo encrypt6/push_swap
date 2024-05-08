@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 18:48:30 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/08 12:20:58 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:53:32 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	ft_dupplicates_error(t_stack *a, int nbr)
 	return (0);
 }
 
-void	ft_free_stack (t_stack **stack)
+void	ft_free_stack(t_stack **stack)
 {
 	t_stack	*current;
 	t_stack	*tmp;
@@ -85,10 +85,9 @@ void	ft_free_stack (t_stack **stack)
 	*stack = NULL;
 }
 
-void ft_print_error_free(t_stack **a)
+void	ft_print_error_free(t_stack **a)
 {
 	ft_free_stack(a);
 	write(2, "Error\n", 6);
 	exit(0);
 }
-

@@ -6,15 +6,15 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:47:36 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/08 20:11:03 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/05/08 21:27:36 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_list **a, t_list **b, int print)
+void	pa(t_stack **a, t_stack **b, int print)
 {
-	t_list	*temp;
+	t_stack	*temp;
 
 	if (!*a)
 		return ;
@@ -26,9 +26,9 @@ void	pa(t_list **a, t_list **b, int print)
 		ft_printf("pa\n");
 }
 
-void	pb(t_list **a, t_list **b, int print)
+void	pb(t_stack **b, t_stack **a, int print)
 {
-	t_list	*temp;
+	t_stack	*temp;
 
 	if (!*b)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/08 21:08:10 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/05/08 21:17:40 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void				rr(t_stack **a, t_stack **b, int print);
 void				rra(t_stack **a, int print);
 void				rrb(t_stack **b, int print);
 void				rrr(t_stack **a, t_stack **b, int print);
+void				pa(t_stack **a, t_stack **b, int print);
+void				pb(t_stack **a, t_stack **b, int print);
 
 t_stack				*ft_stacklast(t_stack *stack);
 t_stack 			*ft_stack_secondlast(t_stack *stack);

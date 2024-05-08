@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:49:08 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/08 21:08:50 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/05/08 21:45:00 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	main(int argc, char *argv[])
 {
 	t_stack		*a;
+	t_stack		*b;
 
 	a = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
@@ -30,14 +31,21 @@ int	main(int argc, char *argv[])
 		++argv;
 	}
 	//sa(&a, PRINT);
-	ra(&a, PRINT);
 	//rra(&a, PRINT);
+	pb(&a, &b, PRINT);
+	ra(&a, PRINT);
 	printf("\n");
 	while (a) 
 	{
         printf("%d ", a->value);
         a = a->next;
     }
+	printf("\n");
+	while(b)
+	{
+		printf("%d ", b->value);
+		b = NULL;
+	}
 	ft_free_stack(&a);
 	return (EXIT_SUCCESS);
 }

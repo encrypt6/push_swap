@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04i/16 16:29:22 by elsikira          #+#    #+#            */
-/*   Updated: 2024/04/23 18:37:54 by elsikira         ###   ########.fr       */
+/*   Created: 2024/04/16 16:29:22 by elsikira          #+#    #+#            */
+/*   Updated: 2024/05/08 13:48:18 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_stack	*ft_get_prev_node(t_stack *head)
 	return (head);
 }
 
-void	ft_create_node(t_stack **a, int nbr)
+void	ft_create_nodes(t_stack **a, int nbr)
 {
 	t_stack	*node;
 	t_stack	*prev_node;
@@ -45,3 +45,4 @@ void	ft_create_node(t_stack **a, int nbr)
 		node->prev = prev_node; //node pointing to previous becomes previous node
 	}
 }
+

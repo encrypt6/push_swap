@@ -6,13 +6,13 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 18:48:30 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/07 16:28:04 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/05/08 12:20:58 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_check_all_errors(t_stack **a, char **argv)
+void	ft_check_all_errors_create_nodes(t_stack **a, char **argv)
 {
 	long	nbr;
 	int		i;
@@ -27,7 +27,7 @@ void	ft_check_all_errors(t_stack **a, char **argv)
 			ft_print_error_free(a);
 		if (ft_dupplicates_error(*a, nbr))
 			ft_print_error_free(a);
-		ft_create_node(a, nbr);
+		ft_create_nodes(a, nbr);
 		++i;
 	}
 }

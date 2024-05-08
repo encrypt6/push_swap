@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:15:24 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/08 19:16:54 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/05/08 19:45:24 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	sa(t_stack **a, int print)
 	(*a)->value = (*a)->next->value;
 	(*a)->next->value = temp;
 	if (print == PRINT)
-		ft_printf("sb\n");
+		ft_printf("sa\n");
 }
 
 void	sb(t_stack **b, int print)

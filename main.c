@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:49:08 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/08 19:27:04 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/05/08 19:44:22 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	main(int argc, char *argv[])
 		printf("%d ", ft_atoi(*argv));
 		++argv;
 	}
-	//sa(a);
-	//ra(&a);
-	rra(&a, PRINT);
+	sa(&a, PRINT);
+	//ra(&a, PRINT);
+	//rra(&a, PRINT);
 	printf("\n");
 	while (a) 
 	{

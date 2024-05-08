@@ -1,50 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_operations.c                                  :+:      :+:    :+:   */
+/*   rotate_operations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 17:15:24 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/08 16:26:44 by elsikira         ###   ########.fr       */
+/*   Created: 2024/05/08 14:41:27 by elsikira          #+#    #+#             */
+/*   Updated: 2024/05/08 16:30:55 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_stack **a)
+void	ra(t_stack **a)
 {
-	int	temp;
+	t_stack	*last;
+	last = *a;
 
 	if (*a == NULL || (*a)->next == NULL)
 		return ;
-	else
-	{
-		temp = (*a)->value;
-		(*a)->value = (*a)->next->value;
-		(*a)->next->value = temp;
-	}
-	write(1, "sa\n", 3);
+	while (last->next != NULL)
+			last = last->next;
+	last->next = *a;
+	*a = (*a)->next;
+	last->next->next = NULL;
+	write(1, "ra\n", 3);
 }
 
-void	sb(t_stack **b)
+void	rb(t_stack **b)
 {
-	int	temp;
+	t_stack	*last;
+	last = *b;
 
 	if (*b == NULL || (*b)->next == NULL)
 		return ;
-	else
-	{
-		temp = (*b)->value;
-		(*b)->value = (*b)->next->value;
-		(*b)->next->value = temp;
-	}
-	write(1, "sb\n", 3);
+	while (last->next != NULL)
+			last = last->next;
+	last->next = *b;
+	*b = (*b)->next;
+	last->next->next = NULL;
+	write(1, "rb\n", 3);
 }
 
-void	ss(t_stack **a, t_stack **b)
+
+void	rr(t_stack **a, t_stack **b)
 {
-	sa(a);
-	sb(b);
-	write(1, "ss\n", 3);
+	ra(a);
+	rb(b);
+	write(1, "rr\n", 3);
 }

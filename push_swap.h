@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/08 21:17:40 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/05/12 13:05:14 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,7 @@ void				pb(t_stack **a, t_stack **b, int print);
 
 t_stack				*ft_stacklast(t_stack *stack);
 t_stack 			*ft_stack_secondlast(t_stack *stack);
+
+int					check_sort(t_stack *a, t_stack *b);
+
 #endif

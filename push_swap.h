@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/12 13:05:14 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/05/14 18:49:32 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ typedef struct s_stack
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }t_stack;
+
+typedef struct s_jostack
+{
+	t_stack *s;
+	int		size;
+}t_jostack;
 
 int					main(int argc, char **argv);
 void				ft_check_all_errors_create_nodes(t_stack **a, char **argv);
@@ -53,5 +59,7 @@ t_stack				*ft_stacklast(t_stack *stack);
 t_stack 			*ft_stack_secondlast(t_stack *stack);
 
 int					check_sort(t_stack *a, t_stack *b);
+
+void				ft_minvalue(t_stack **a, t_stack **b);
 
 #endif

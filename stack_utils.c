@@ -6,13 +6,13 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 20:37:15 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/12 17:22:39 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/05/14 19:24:08 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_sort(t_stack *a, t_stack *b)
+int	ft_check_sort(t_stack *a, t_stack *b)
 {
 	t_stack	*current;
 

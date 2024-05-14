@@ -6,10 +6,14 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:52:54 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/14 19:22:10 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/05/14 19:28:58 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	ft_sort_algo(t_stack **a)
+{
 
+
+}

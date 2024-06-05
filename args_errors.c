@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 18:48:30 by elsikira          #+#    #+#             */
-/*   Updated: 2024/05/14 16:19:43 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/05 19:18:26 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_check_all_errors_create_nodes(t_stack **a, char **argv)
 	while (argv[i])
 	{
 		nbr = ft_atol(argv[i]);
-		if (ft_not_int_error(&argv[i]))
+		if (ft_not_int_error(argv[i]))
 			ft_print_error_free(a);
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			ft_print_error_free(a);
@@ -32,24 +32,17 @@ void	ft_check_all_errors_create_nodes(t_stack **a, char **argv)
 	}
 }
 
-int	ft_not_int_error(char **argv)
+int	ft_not_int_error(char *arg)
 {
 	int	i;
-	int	j;
 
-	i = 1;
-	j = 0;
-	while (argv[i])
+	i = 0;
+	if (arg[i] == '-' || arg[i] == '+')
+		i++;
+	while (arg[i])
 	{
-		while (argv[i][j])
-		{
-			if (j == 0 && (argv[i][j] == '-' || argv[i][j] == '+'))
-				j++;
-			if (!ft_isdigit(argv[i][j]))
-				return (1);
-			j++;
-		}
-		j = 0;
+		if (!ft_isdigit(arg[i]))
+			return (1);
 		i++;
 	}
 	return (0);
@@ -57,7 +50,7 @@ int	ft_not_int_error(char **argv)
 
 int	ft_dupplicates_error(t_stack *a, int nbr)
 {
-	if (a == NULL) //if stack empty
+	if (a == NULL)
 		return (0);
 	while (a)
 	{

@@ -6,11 +6,11 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 17:04:42 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/16 17:07:07 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/06 16:48:13 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static char	*ft_strcat(char *src, char *dst)
+char	*ft_strcat(char *dst, char *src)
 {
 	int	i;
 	int	j;

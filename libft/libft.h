@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:42:16 by elsikira          #+#    #+#             */
-/*   Updated: 2024/04/17 12:02:28 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/06 15:46:22 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ char			*ft_strdup(char *src);
 char			*ft_strcpy(char *src, char *dst);
 
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
+
+char     		*ft_strcat(char *src, char *dst);           
 
 size_t			ft_strlcpy(char *dest, const char *src, size_t size);
 

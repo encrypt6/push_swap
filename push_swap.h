@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/02 21:12:24 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/09 10:59:54 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ typedef struct s_jostack
 }t_jostack;
 
 int					main(int argc, char **argv);
+
+char				**manage_args(int argc, char **argv);
+char    			*concat_args(int argc, char **argv);
+
 void				ft_check_all_errors_create_nodes(t_stack **a, char **argv);
 int					ft_not_int_error(char *arg);
 int					ft_dupplicates_error(t_stack *a, int nbr);

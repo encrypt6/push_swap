@@ -6,7 +6,7 @@
 #    By: elsikira <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/26 15:23:33 by elsikira          #+#    #+#              #
-#    Updated: 2024/05/14 15:43:13 by elsikira         ###   ########.fr        #
+#    Updated: 2024/06/09 11:02:06 by elsikira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME = push_swap
 
 MAIN_SRC = main.c
 
-SRCS = args_errors.c make_lists.c push_operations.c swap_operations.c rotate_operations.c reverse_rotate_operations.c stack_utils.c algo.c 
+SRCS = manage_args.c args_errors.c make_lists.c push_operations.c swap_operations.c rotate_operations.c reverse_rotate_operations.c stack_utils.c algo.c 
 
 LIBFT_PATH = libft
 

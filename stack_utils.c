@@ -6,31 +6,30 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 20:37:15 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/11 18:27:58 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:59:11 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_isempty(t_stack *b)
+void	print_stack(t_stack *stack)
 {
-	t_stack *current;
-
-	current = b;
-	if (b == NULL)
-		return (0);
-	else
-		return (1);
+    if (!stack)
+        return;
+    while (stack)
+    {
+        printf("%d ", stack->value);
+        stack = stack->next;
+    }
+    printf("\n");
 }
 
-int	ft_issorted(t_stack *a, t_stack *b)
+int	ft_issorted(t_stack *a)
 {
 	t_stack	*current;
 
 	current = a;
 	if (!a)
-		return (EXIT_FAILURE);
-	if (ft_isempty(b) == 1)
 		return (EXIT_FAILURE);
 	while (current->next)
 	{

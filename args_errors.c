@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 18:48:30 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/06 16:19:07 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/12 18:57:46 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,18 @@ void	ft_check_all_errors_create_nodes(t_stack **a, char **argv)
 	while (argv[i])
 	{
 		nbr = ft_atol(argv[i]);
-		if (ft_not_int_error(argv[i]) || nbr > INT_MAX || nbr < INT_MIN || ft_dupplicates_error(*a, nbr))
+		if (ft_not_int_error(argv[i]) || nbr > INT_MAX || nbr < INT_MIN)
 			ft_print_error_free(a);
-		ft_create_nodes(a, nbr);
+		if (ft_dupplicates_error(*a, nbr))
+			ft_print_error_free(a);
 		++i;
+		ft_create_nodes(a, nbr);
 	}
 }
 
 int	ft_not_int_error(char *arg)
 {
-	int	i;
+	long int	i;
 
 	i = 0;
 	if (arg[i] == '-' || arg[i] == '+')

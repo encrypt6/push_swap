@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/11 18:15:16 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/12 20:01:39 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,13 @@ void				pb(t_stack **a, t_stack **b, int print);
 t_stack				*ft_stacklast(t_stack *stack);
 t_stack 			*ft_stack_secondlast(t_stack *stack);
 
-int					ft_issorted(t_stack *a, t_stack *b);
+int					ft_issorted(t_stack *a);
 int					ft_isempty(t_stack *b);
 void				ft_minvalue(t_stack **a, t_stack **b);
+
+void				ft_quicksort(t_stack **a, t_stack **b, int size);
+
+void				print_stack(t_stack *stack);
+int					stack_size(t_stack *stack);
 
 #endif

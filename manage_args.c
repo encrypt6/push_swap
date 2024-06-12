@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 19:55:11 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/09 17:21:39 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:43:37 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,22 +59,10 @@ char	**manage_args(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	concatenated_args = concat_args(argc, argv);
 	if (!concatenated_args)
-	{
-		free(concatenated_args);
 		exit(EXIT_FAILURE);
-	}
 	splitted_args = ft_split(concatenated_args, ' ');
 	free(concatenated_args);
 	if (!splitted_args)
-	{
-		free(splitted_args);
 		exit(EXIT_FAILURE);
-	}
 	return (splitted_args);
-	while (splitted_args[i] != NULL)
-	{
-		free(splitted_args[i]);
-		i++;
-	}
-	free(splitted_args);
 }

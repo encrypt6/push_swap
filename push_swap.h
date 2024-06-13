@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/12 21:39:43 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/13 19:35:00 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int					ft_issorted(t_stack *a);
 int					ft_isempty(t_stack *b);
 void				ft_minvalue(t_stack **a, t_stack **b);
 
-void				sort_algo(t_stack **a, t_stack **b);
+void				sort_algo(t_stack **a);//, t_stack **b);
 void				print_stack(t_stack *stack);
 int					stack_size(t_stack *stack);
 

@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 19:55:11 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/12 14:43:37 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/13 00:22:36 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,9 @@ char	*concat_args(int argc, char **argv)
 
 char	**manage_args(int argc, char **argv)
 {
-	int		i;
 	char	*concatenated_args;
 	char	**splitted_args;
 	
-	i = 0;
 	if (argc < 2)
 		exit(EXIT_FAILURE);
 	concatenated_args = concat_args(argc, argv);

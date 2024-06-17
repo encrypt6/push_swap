@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:26:24 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/15 18:05:25 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/17 13:43:43 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,16 @@
 void	rra(t_stack **a, int print)
 {
 	t_stack	*second_last;
-	second_last = ft_stack_secondlast(*a);
+	t_stack	*last;
 
-	if (*a == NULL || (*a)->next == NULL)
+	second_last = ft_stack_secondlast(*a);
+	last = second_last->next;
+
+	if (*a == NULL || (*a)->next == NULL || last == NULL)
 		return ;
-	second_last->next->next = *a;
-	*a = second_last->next;
+	last->next = *a;
 	second_last->next = NULL;
+	*a = last;
 	if (print == PRINT)
 		ft_printf("rra\n");
 }
@@ -29,13 +32,16 @@ void	rra(t_stack **a, int print)
 void	rrb(t_stack **b, int print)
 {
 	t_stack	*second_last;
-	second_last = ft_stack_secondlast(*b);
+	t_stack *last;
 
-	if (*b == NULL || (*b)->next == NULL)
+	second_last = ft_stack_secondlast(*b);
+	last = second_last->next;
+
+	if (*b == NULL || (*b)->next == NULL || last == NULL)
 		return ;
-	second_last->next->next = *b;
-	*b = second_last->next;
+	last->next = *b;
 	second_last->next = NULL;
+	*b = last;
 	if (print == PRINT)
 		ft_printf("rrb\n");
 }

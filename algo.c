@@ -6,38 +6,47 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:52:54 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/15 18:06:23 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/17 17:05:10 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*void	ft_sort_three(t_stack **a)
+void	ft_cpy_stack_to_array(t_stack *a, int array[], int *array_size)
 {
-	
-}*/
+	t_stack	*current;
+	*array_size = 0;
+
+	current = a;
+	while (current != NULL)
+	{
+	}
+}
+
+void	ft_radix_sort(t_stack **a, t_stack **b)
+{
+	t_stack	*current;
+	current = a;
+
+	while(curent != NULL
+	ft_cpy_stack_to_array(*a, array, &array_size);
+}
 
 void	ft_sort_two_three(t_stack **a)
 {
-		if (stack_size(*a) == 2)
-			sa(a, PRINT);
-		else if (stack_size(*a) == 3)
-		{
-			if ((*a)->value > (*a)->next->value && (*a)->next->value < (*a)->next->next->value && (*a)->value < (*a)->next->next->value)
-				sa(a, PRINT);
-			else if ((*a)->value > (*a)->next->value && (*a)->next->value < (*a)->next->next->value && (*a)->value > (*a)->next->next->value)
-				ra(a, PRINT);
-			else if ((*a)->value < (*a)->next->value && (*a)->next->value > (*a)->next->next->value && (*a)->value < (*a)->next->next->value)
-			{
-				sa(a, PRINT);
-				ra(a, PRINT);
-			}
+	int	max_val;
 
-		}
+	max_val = ft_max_val(*a);
 
+	if ((*a)->value == max_val)
+		ra(a, PRINT);
+	else if ((*a)->next->value == max_val)
+		rra(a, PRINT);
+	if ((*a)->value > (*a)->next->value)
+		sa(a, PRINT);
 }
 
-void	sort_algo(t_stack **a)//, t_stack **b)
+void	sort_algo(t_stack **a, t_stack **b)
 {
 	if ((*a) == NULL || (*a)->next == NULL)
 		exit(1);
@@ -45,9 +54,7 @@ void	sort_algo(t_stack **a)//, t_stack **b)
 	{
 		if (stack_size(*a) <= 3)
 			ft_sort_two_three(a);
-		else if (stack_size(*a) >= 4 && stack_size(*a) <= 5)
-		{
-
-		}
+		else 
+			ft_radix_sort(a, b);
 	}
 }

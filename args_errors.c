@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 18:48:30 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/12 18:57:46 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/17 12:47:02 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_not_int_error(char *arg)
 	long int	i;
 
 	i = 0;
-	if (arg[i] == '-' || arg[i] == '+')
+	if ((arg[i] == '-' || arg[i] == '+' ) && arg[i + 1] != '\0')
 		i++;
 	while (arg[i])
 	{

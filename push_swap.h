@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/13 19:35:00 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/17 13:17:26 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@ typedef struct s_stack
 
 int					main(int argc, char **argv);
 
+//args type management
 char				**manage_args(int argc, char **argv);
 char    			*concat_args(int argc, char **argv);
 
+//args errors management
 void				ft_check_all_errors_create_nodes(t_stack **a, char **argv);
 int					ft_not_int_error(char *arg);
 int					ft_dupplicates_error(t_stack *a, int nbr);
@@ -41,6 +43,7 @@ void				ft_free_stack(t_stack **stack);
 t_stack				*ft_get_prev_node(t_stack *head);
 void				ft_create_nodes(t_stack **a, int nbr);
 
+//mooves
 void				sa(t_stack **a, int print);
 void				sb(t_stack **b, int print);
 void				ss(t_stack **a, t_stack **b, int print);
@@ -53,15 +56,16 @@ void				rrr(t_stack **a, t_stack **b, int print);
 void				pa(t_stack **a, t_stack **b, int print);
 void				pb(t_stack **a, t_stack **b, int print);
 
+//stack utils
 t_stack				*ft_stacklast(t_stack *stack);
 t_stack 			*ft_stack_secondlast(t_stack *stack);
-
 int					ft_issorted(t_stack *a);
-int					ft_isempty(t_stack *b);
-void				ft_minvalue(t_stack **a, t_stack **b);
-
-void				sort_algo(t_stack **a);//, t_stack **b);
-void				print_stack(t_stack *stack);
 int					stack_size(t_stack *stack);
+void				ft_minvalue(t_stack **a, t_stack **b);
+void				print_stack(t_stack *stack);
+int					ft_max_val(t_stack *top);
+
+//sort algorithm
+void				sort_algo(t_stack **a);//, t_stack **b);
 
 #endif

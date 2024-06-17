@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:52:54 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/17 17:05:10 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/17 17:20:45 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,12 @@ void	ft_cpy_stack_to_array(t_stack *a, int array[], int *array_size)
 	current = a;
 	while (current != NULL)
 	{
+		array[*array_size] = current->value;
+		(*array_size)++;
+		current = current->next;
 	}
+
+
 }
 
 void	ft_radix_sort(t_stack **a, t_stack **b)
@@ -28,8 +33,8 @@ void	ft_radix_sort(t_stack **a, t_stack **b)
 	t_stack	*current;
 	current = a;
 
-	while(curent != NULL
 	ft_cpy_stack_to_array(*a, array, &array_size);
+	ft_sort_int_tab(
 }
 
 void	ft_sort_two_three(t_stack **a)

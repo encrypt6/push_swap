@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 20:37:15 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/17 13:40:07 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/19 23:00:50 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ t_stack *ft_stack_secondlast(t_stack *stack)
 	return (stack);
 }
 
-int	stack_size(t_stack *stack)
+int	ft_stack_size(t_stack *stack)
 {
 	int	i;
 	

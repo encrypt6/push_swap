@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/19 23:09:21 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/20 00:19:53 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 typedef struct s_stack
 {
 	int				value;
+	int				index;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }t_stack;
@@ -54,7 +55,7 @@ void				rra(t_stack **a, int print);
 void				rrb(t_stack **b, int print);
 void				rrr(t_stack **a, t_stack **b, int print);
 void				pa(t_stack **a, t_stack **b, int print);
-void				pb(t_stack **a, t_stack **b, int print);
+void				pb(t_stack **b, t_stack **a, int print);
 
 //stack utils
 t_stack				*ft_stacklast(t_stack *stack);
@@ -66,6 +67,6 @@ void				print_stack(t_stack *stack);
 int					ft_max_val(t_stack *top);
 
 //sort algorithm
-void				sort_algo(t_stack **a);//, t_stack **b);
+void				sort_algo(t_stack **a, t_stack **b);
 
 #endif

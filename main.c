@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:49:08 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/15 17:51:24 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/25 18:08:08 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,10 @@ int	main(int argc, char *argv[])
    	if (ft_issorted(a) == 1)
 	{
 		printf("Not sorted\n");
-		sort_algo(&a);
+		print_stack(a);
+		sort_algo(&a, &b);
 	}
-	else
-		return (EXIT_SUCCESS);
-	print_stack(a);
-	print_stack(b);
+	//print_stack(b);
 	//ft_free_all();
 	ft_free_stack(&a);
 	free_split(args);

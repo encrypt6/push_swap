@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:52:54 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/20 00:35:54 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/25 18:24:28 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,64 +14,24 @@
 
 void	ft_assign_index_to_stack(t_stack *a, int index_array[], int	array_size)
 {
-	int	i;
-	t_stack	*current;
-
-	array_size = ft_stack_size(a);	
-	i = 0;
-	current = a;
-	while (current && i < array_size)
-	{
-		current->index = index_array[i];
-		current = current->next;
-		i++;
-	}
 }
-
-void	ft_get_index(int *array, int *index_array, int size)
+void	ft_sort_int_tab(int *tab, unsigned int size)
 {
-	int	i;
-	int	j;
+	unsigned int	i;
+	int				temp;
 
 	i = 0;
-	j = 0;
-	while (i < size)
+	while (i < size - 1)
 	{
-		j = 0;
-		while (j < size - 1)
+		if (tab[i] > tab[i + 1])
 		{
-			if (array[j] == array[i])
-			{
-				index_array[j] = i;
-				break;
-			}
-			j++;
+			temp = tab[i];
+			tab[i] = tab[i + 1];
+			tab[i + 1] = temp;
+			i = 0;
 		}
-		i++;
-	}
-}
-
-void	ft_sort_int_tab(int *tab, int size)
-{
-	int	i;
-	int	j;
-	int	temp;
-
-	i = 0;
-	while (i < size)
-	{
-		j = 0;
-		while (j < size - 1)
-		{
-			if (tab[j] > tab[j + 1])
-			{
-				temp = tab[j];
-				tab[j] = tab[j + 1];
-				tab[j + 1] = temp;
-			}
-			j++;
-		}
-		i++;
+		else
+			i++;
 	}
 }
 
@@ -80,47 +40,22 @@ void	print_array(int array[], int size)
 	int	i = 0;
 	while (i < size)
 	{
-		printf("%d ", array[i]);
+		printf("%d\n", array[i]);
 		i++;
 	}
 	printf("\n");
 }
 
-void	ft_cpy_stack_to_array(t_stack *a, int array[], int *array_size, int	index_array[])
+void	ft_cpy_stack_to_array(t_stack *a) 
 {
-	t_stack	*current;
-	*array_size = 0;
-
-	current = a;
-	while (current != NULL)
-	{
-		array[*array_size] = current->value;
-		(*array_size)++;
-		current = current->next;
-	}
-	print_array(array, *array_size);
-	ft_sort_int_tab(array, *array_size); 
-	print_array(array, *array_size);
+	print_array(array, size);
+	ft_sort_int_tab(array, *size); 
+	print_array(array, size);
     ft_get_index(array, index_array, *array_size); // Calculate indices of sorted int tab
-	
 }
 
-void	ft_radix_sort(t_stack **a, t_stack **b)
+void	radix_sort(t_stack **a, t_stack **b)
 {
-	int	stack_size;
-	stack_size = ft_stack_size(*a);
-	int	array[stack_size];
-	int	index_array[stack_size];
-	int	bit;
-	int	i;
-	int	j;
-
-	bit = 0;
-	i = 0;
-
-	ft_cpy_stack_to_array(*a, array, &stack_size, index_array);
-	ft_assign_index_to_stack(*a, index_array, stack_size);
-
 	while ((stack_size - 1) >> bit != 0)
 		bit++;
 	while (i < bit)
@@ -137,10 +72,9 @@ void	ft_radix_sort(t_stack **a, t_stack **b)
 			pa(a, b, PRINT);
 		i++;
 	}
-
 }
 
-void	ft_sort_two_three(t_stack **a)
+void	sort_two_three(t_stack **a)
 {
 	int	max_val;
 
@@ -161,9 +95,9 @@ void	sort_algo(t_stack **a, t_stack **b)
 	else
 	{
 		if (ft_stack_size(*a) <= 3)
-			ft_sort_two_three(a);
+			sort_two_three(a);
 		else 
-			ft_radix_sort(a, b);
+			radix_sort(a, b);
 	}
 }
 

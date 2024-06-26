@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:42:16 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/06 15:46:22 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/26 18:18:10 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,4 +105,5 @@ char			*ft_strtrim(char const *s1, char const *set);
 
 char			**ft_split(char const *s, char c);
 
+int				*ft_sort_int_tab(int *tab, unsigned int size);
 #endif

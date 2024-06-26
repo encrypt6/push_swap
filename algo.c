@@ -6,33 +6,12 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:52:54 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/26 17:32:11 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/26 19:59:01 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	*ft_sort_int_tab(int *tab, unsigned int size)
-{
-	unsigned int	i;
-	int				temp;
-
-	i = 0;
-	while (i < size - 1)
-	{
-		if (tab[i] > tab[i + 1])
-		{
-			temp = tab[i];
-			tab[i] = tab[i + 1];
-			tab[i + 1] = temp;
-			i = 0;
-		}
-		else
-			i++;
-	}
-	return (tab);
-}
-
+		
 void	print_tab(int *tab, int size)
 {
 	int	i;
@@ -68,13 +47,15 @@ int	*ft_cpy_stack_to_tab(t_stack **a, int size)
 
 void	ft_indexation(t_stack **a)
 {
+	int	i;
 	int	*tab;
 	int	size;
-	int	i;
+	t_stack	*head;
 
-	size = ft_stack_size(*a);
 	i = 0;
+	size = ft_stack_size(*a);
 	tab = ft_sort_int_tab(ft_cpy_stack_to_tab(a, size), size);
+	head  = *a;
 	print_tab(tab, size);
 	while ((*a))
 	{
@@ -93,6 +74,31 @@ void	ft_indexation(t_stack **a)
 		(*a) = (*a)->next;
 	}
 	free(tab);
+	*a = head;
+}
+
+void	radix_sort(t_stack **a, t_stack **b)
+{
+	int	bit_pos;
+	int	max_bit;
+
+	max_bit = 32;
+	bit_pos = 0;
+	ft_indexation(a);
+	while (bit_pos < max_bit)
+	{
+		while (*a)
+		{
+			if ((*a)->index & (1 << bit_pos))
+				pb(a, b, PRINT);
+			else	
+				ra(a, PRINT);
+			(*a) = (*a)->next;
+		}
+		while (*b)
+			pa(b, a, PRINT);
+		bit_pos++;
+	}
 }
 
 void	sort_two_three(t_stack **a)
@@ -106,12 +112,6 @@ void	sort_two_three(t_stack **a)
 		rra(a, PRINT);
 	if ((*a)->value > (*a)->next->value)
 		sa(a, PRINT);
-}
-
-void	radix_sort(t_stack **a, t_stack **b)
-{
-	*b = NULL;
-	ft_indexation(a);
 }
 
 void	sort_algo(t_stack **a, t_stack **b)

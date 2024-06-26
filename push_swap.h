@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/25 12:58:20 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/26 14:10:27 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_stack
 	int				value;
 	int				index;
 	struct s_stack	*next;
-	struct s_stack	*prev;
+//	struct s_stack	*prev;
 }t_stack;
 
 int					main(int argc, char **argv);

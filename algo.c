@@ -6,13 +6,13 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:52:54 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/25 18:24:28 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/26 14:14:05 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_assign_index_to_stack(t_stack *a, int index_array[], int	array_size)
+/*void	ft_assign_index_to_stack(t_stack *a, int index_array[], int	array_size)
 {
 }
 void	ft_sort_int_tab(int *tab, unsigned int size)
@@ -101,7 +101,7 @@ void	sort_algo(t_stack **a, t_stack **b)
 	}
 }
 
-
+*/
 //radix : consists in sorting from least significant digit to most significant digit. 10 boxes for 0 1 2 3 4 5 6 7 8 9, but instead we will use box 1 and box 0, because we only have two stacks.
 //first, we have to copy the stack a into a tab, and sort it. 
 // exemple : 9 3 7 26 15. will become 3 7 9 15 26.

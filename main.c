@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:49:08 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/25 18:08:08 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/26 14:13:41 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(int argc, char *argv[])
 	{
 		printf("Not sorted\n");
 		print_stack(a);
-		sort_algo(&a, &b);
+		//sort_algo(&a, &b);
 	}
 	//print_stack(b);
 	//ft_free_all();

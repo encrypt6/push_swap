@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:26:24 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/17 13:43:43 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/27 20:04:55 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	rra(t_stack **a, int print)
 
 	second_last = ft_stack_secondlast(*a);
 	last = second_last->next;
-
 	if (*a == NULL || (*a)->next == NULL || last == NULL)
 		return ;
 	last->next = *a;
@@ -32,11 +31,10 @@ void	rra(t_stack **a, int print)
 void	rrb(t_stack **b, int print)
 {
 	t_stack	*second_last;
-	t_stack *last;
+	t_stack	*last;
 
 	second_last = ft_stack_secondlast(*b);
 	last = second_last->next;
-
 	if (*b == NULL || (*b)->next == NULL || last == NULL)
 		return ;
 	last->next = *b;

@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 19:55:11 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/13 00:22:36 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/27 20:03:26 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,16 @@ char	*concat_args(int argc, char **argv)
 
 	i = 1;
 	len = 0;
-
 	while (i < argc)
 	{
 		len += ft_strlen(argv[i]);
 		if (i < argc - 1)
-		{
 			len++;
-		}
 		i++;
 	}
 	result = malloc(sizeof(char) * (len + 1));
 	if (!result)
-	{
-		free(result);
 		exit(EXIT_FAILURE);
-	}
 	result[0] = '\0';
 	i = 1;
 	while (i < argc)
@@ -45,14 +39,14 @@ char	*concat_args(int argc, char **argv)
 			ft_strcat(result, " ");
 		i++;
 	}
-	return(result); 
+	return (result);
 }
 
 char	**manage_args(int argc, char **argv)
 {
 	char	*concatenated_args;
 	char	**splitted_args;
-	
+
 	if (argc < 2)
 		exit(EXIT_FAILURE);
 	concatenated_args = concat_args(argc, argv);

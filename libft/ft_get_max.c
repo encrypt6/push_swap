@@ -1,14 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_utils.c                                       :+:      :+:    :+:   */
+/*   ft_get_max.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/12 16:23:22 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/12 16:23:39 by elsikira         ###   ########.fr       */
+/*   Created: 2024/06/27 15:08:25 by elsikira          #+#    #+#             */
+/*   Updated: 2024/06/27 19:45:59 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
+int	ft_max_val(int top)
+{
+	int	i;
+	int	max;
+
+	i = 0;
+	max = INT_MIN;
+	while (top[i])
+	{
+		if (max < top[i])
+			max = top[i];
+		i++;
+	}
+	return (max);
+}

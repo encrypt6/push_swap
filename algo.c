@@ -6,24 +6,11 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:52:54 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/26 19:59:01 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/27 20:11:43 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-		
-void	print_tab(int *tab, int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		printf("%d\n", tab[i]);
-		i++;
-	}
-	printf("\n");
-}
 
 int	*ft_cpy_stack_to_tab(t_stack **a, int size)
 {
@@ -47,16 +34,15 @@ int	*ft_cpy_stack_to_tab(t_stack **a, int size)
 
 void	ft_indexation(t_stack **a)
 {
-	int	i;
-	int	*tab;
-	int	size;
+	int		i;
+	int		*tab;
+	int		size;
 	t_stack	*head;
 
 	i = 0;
 	size = ft_stack_size(*a);
 	tab = ft_sort_int_tab(ft_cpy_stack_to_tab(a, size), size);
-	head  = *a;
-	print_tab(tab, size);
+	head = *a;
 	while ((*a))
 	{
 		while (tab[i])
@@ -64,7 +50,6 @@ void	ft_indexation(t_stack **a)
 			if (tab[i] == (*a)->value)
 			{
 				(*a)->index = i;
-				printf("%d\n", (*a)->index);
 				break ;
 			}
 			else
@@ -81,22 +66,26 @@ void	radix_sort(t_stack **a, t_stack **b)
 {
 	int	bit_pos;
 	int	max_bit;
+	int	size;
+	int	i;
 
-	max_bit = 32;
+	size = ft_stack_size(*a);
+	max_bit = 31;
 	bit_pos = 0;
 	ft_indexation(a);
-	while (bit_pos < max_bit)
+	while (bit_pos <= max_bit)
 	{
-		while (*a)
+		i = 0;
+		while (i < size)
 		{
-			if ((*a)->index & (1 << bit_pos))
-				pb(a, b, PRINT);
-			else	
+			if ((((*a)->index >> bit_pos) & 1))
+				pb(b, a, PRINT);
+			else
 				ra(a, PRINT);
-			(*a) = (*a)->next;
+			i++;
 		}
 		while (*b)
-			pa(b, a, PRINT);
+			pa(a, b, PRINT);
 		bit_pos++;
 	}
 }
@@ -105,7 +94,7 @@ void	sort_two_three(t_stack **a)
 {
 	int	max_val;
 
-	max_val = ft_max_val(*a);
+	max_val = ft_max_val(*a, 0);
 	if ((*a)->value == max_val)
 		ra(a, PRINT);
 	else if ((*a)->next->value == max_val)
@@ -113,18 +102,3 @@ void	sort_two_three(t_stack **a)
 	if ((*a)->value > (*a)->next->value)
 		sa(a, PRINT);
 }
-
-void	sort_algo(t_stack **a, t_stack **b)
-{
-	if ((*a) == NULL || (*a)->next == NULL)
-		exit(1);
-	else
-	{
-		if (ft_stack_size(*a) <= 3)
-			sort_two_three(a);
-		else
-			radix_sort(a, b);
-	}
-}
-
-//8" "78" "2" "5" "6" "9" "7"

@@ -6,32 +6,29 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 20:37:15 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/19 23:00:50 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/27 20:07:21 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(t_stack *stack)
+int	ft_max_val(t_stack *top, int field)
 {
-    if (!stack)
-        return;
-    while (stack)
-    {
-        printf("%d ", stack->value);
-        stack = stack->next;
-    }
-    printf("\n");
-}
+	int	max;
 
-int	ft_max_val(t_stack *top)
-{
-	int	max = INT_MIN;
-
+	max = INT_MIN;
 	while (top != NULL)
 	{
-		if (max < top->value)
-			max = top->value;
+		if (field == 0)
+		{
+			if (max < top->value)
+				max = top->value;
+		}
+		else
+		{
+			if (max < top->index)
+				max = top->index;
+		}
 		top = top->next;
 	}
 	return (max);
@@ -51,9 +48,9 @@ int	ft_issorted(t_stack *a)
 			current = current->next;
 		}
 		else
-			return (1); //not sorted
+			return (1);
 	}
-	return (0); //sorted
+	return (0);
 }
 
 t_stack	*ft_stacklast(t_stack *stack)
@@ -65,7 +62,7 @@ t_stack	*ft_stacklast(t_stack *stack)
 	return (stack);
 }
 
-t_stack *ft_stack_secondlast(t_stack *stack)
+t_stack	*ft_stack_secondlast(t_stack *stack)
 {
 	if (!stack)
 		return (NULL);
@@ -77,9 +74,9 @@ t_stack *ft_stack_secondlast(t_stack *stack)
 int	ft_stack_size(t_stack *stack)
 {
 	int	i;
-	
+
 	i = 0;
-	while(stack)
+	while (stack)
 	{
 		stack = stack->next;
 		i++;

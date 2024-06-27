@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/26 14:53:51 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/27 19:48:51 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int					main(int argc, char **argv);
 
 //args type management
 char				**manage_args(int argc, char **argv);
-char    			*concat_args(int argc, char **argv);
+char				*concat_args(int argc, char **argv);
 
 //args errors management
 void				ft_check_all_errors_create_nodes(t_stack **a, char **argv);
@@ -58,14 +58,15 @@ void				pb(t_stack **b, t_stack **a, int print);
 
 //stack utils
 t_stack				*ft_stacklast(t_stack *stack);
-t_stack 			*ft_stack_secondlast(t_stack *stack);
+t_stack				*ft_stack_secondlast(t_stack *stack);
 int					ft_issorted(t_stack *a);
 int					ft_stack_size(t_stack *stack);
 void				ft_minvalue(t_stack **a, t_stack **b);
 void				print_stack(t_stack *stack);
-int					ft_max_val(t_stack *top);
+int					ft_max_val(t_stack *top, int field);
 
 //sort algorithm
-void				sort_algo(t_stack **a, t_stack **b);
+t_stack				*radix_sort(t_stack **a, t_stack **b);
+void				sort_two_three(t_stack **a);
 
 #endif

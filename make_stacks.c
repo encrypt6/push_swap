@@ -6,39 +6,29 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:29:22 by elsikira          #+#    #+#            */
-/*   Updated: 2024/06/26 14:12:53 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/27 19:53:48 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*t_stack	*ft_get_prev_node(t_stack *head)
-{
-	if (head == NULL)
-		return (NULL);
-	while (head->next)
-		head = head->next;//while pointing to next, the previous node is head
-	return (head);
-}*/
 
 void	ft_create_nodes(t_stack **a, int nbr)
 {
 	t_stack	*node;
 	t_stack	*head;
 
-	if (a == NULL) // if s
+	if (a == NULL)
 		return ;
 	node = malloc(sizeof(t_stack));
 	if (node == NULL)
 		return ;
-	node->next = NULL; // the new node points to NULL
-	node->value = nbr; // value is the nbr passed
-	if (*a == NULL) // if stack is empty
+	node->next = NULL;
+	node->value = nbr;
+	if (*a == NULL)
 	{
 		*a = node;
-		//node->prev = NULL; //pointer to prev is NULL
 	}
-	else // linking nodes
+	else
 	{
 		head = *a;
 		while (head->next != NULL)

@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/27 19:48:51 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/28 14:25:04 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void				print_stack(t_stack *stack);
 int					ft_max_val(t_stack *top, int field);
 
 //sort algorithm
-t_stack				*radix_sort(t_stack **a, t_stack **b);
+void				radix_sort(t_stack **a, t_stack **b);
 void				sort_two_three(t_stack **a);
 
 #endif

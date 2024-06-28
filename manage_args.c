@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 19:55:11 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/27 20:03:26 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/28 16:01:24 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,12 @@ char	*concat_args(int argc, char **argv)
 	if (!result)
 		exit(EXIT_FAILURE);
 	result[0] = '\0';
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (++i < argc)
 	{
 		ft_strcat(result, argv[i]);
 		if (i < argc - 1)
 			ft_strcat(result, " ");
-		i++;
 	}
 	return (result);
 }

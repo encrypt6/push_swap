@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:52:54 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/27 20:11:43 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/28 19:55:32 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,12 @@ int	*ft_cpy_stack_to_tab(t_stack **a, int size)
 	return (tab);
 }
 
-void	ft_indexation(t_stack **a)
+void	ft_indexation(t_stack **a, int i)
 {
-	int		i;
 	int		*tab;
 	int		size;
 	t_stack	*head;
 
-	i = 0;
 	size = ft_stack_size(*a);
 	tab = ft_sort_int_tab(ft_cpy_stack_to_tab(a, size), size);
 	head = *a;
@@ -62,30 +60,56 @@ void	ft_indexation(t_stack **a)
 	*a = head;
 }
 
+int	ft_get_msb(int nbr)
+{
+	int	msb;
+
+	msb = 0;
+	if (nbr == 0)
+		return (0);
+	nbr = nbr / 2;
+	while (nbr != 0)
+	{
+		nbr = nbr / 2;
+		msb++;
+	}
+	return (msb);
+}
+
 void	radix_sort(t_stack **a, t_stack **b)
 {
 	int	bit_pos;
-	int	max_bit;
-	int	size;
+	int	msb;
+	int	size_a;
+	int	size_b;
 	int	i;
 
-	size = ft_stack_size(*a);
-	max_bit = 31;
+	ft_indexation(a, 0);
+	size_a = ft_stack_size(*a);
+	msb = ft_get_msb(size_a - 1);
 	bit_pos = 0;
-	ft_indexation(a);
-	while (bit_pos <= max_bit)
+	while (bit_pos <= msb)
 	{
 		i = 0;
-		while (i < size)
+		size_a = ft_stack_size(*a);
+		while (i < size_a)
 		{
 			if ((((*a)->index >> bit_pos) & 1))
-				pb(b, a, PRINT);
-			else
 				ra(a, PRINT);
+			else
+				pb(b, a, PRINT);
 			i++;
 		}
-		while (*b)
-			pa(a, b, PRINT);
+		i = 0;
+		size_b = ft_stack_size(*b);
+		while (i < size_b)
+		{
+			if ((((*b)->index >> (bit_pos + 1)) & 1) || (bit_pos == msb)) 
+				pa(a, b, PRINT);
+			else
+				rb(b, PRINT);
+			i++;
+		}
 		bit_pos++;
 	}
 }

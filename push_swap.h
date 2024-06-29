@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/28 14:25:04 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/29 16:44:24 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void				ft_free_stack(t_stack **stack);
 t_stack				*ft_get_prev_node(t_stack *head);
 void				ft_create_nodes(t_stack **a, int nbr);
 
-//mooves
+//operations
 void				sa(t_stack **a, int print);
 void				sb(t_stack **b, int print);
 void				ss(t_stack **a, t_stack **b, int print);
@@ -59,14 +59,22 @@ void				pb(t_stack **b, t_stack **a, int print);
 //stack utils
 t_stack				*ft_stacklast(t_stack *stack);
 t_stack				*ft_stack_secondlast(t_stack *stack);
-int					ft_issorted(t_stack *a);
 int					ft_stack_size(t_stack *stack);
-void				ft_minvalue(t_stack **a, t_stack **b);
-void				print_stack(t_stack *stack);
-int					ft_max_val(t_stack *top, int field);
+int					ft_max_val(t_stack *top);
+
+//checking sort utils
+int					ft_is_reverse_sorted(t_stack *stack);
+int					ft_is_sorted(t_stack *stack);
 
 //sort algorithm
 void				radix_sort(t_stack **a, t_stack **b);
 void				sort_two_three(t_stack **a);
+
+//radix sort utils
+void				ft_ra_or_pb(t_stack **a, t_stack **b, int bit_pos);
+void				ft_rb_or_pa(t_stack **a, t_stack **b, int bit_pos, int msb);
+int					ft_get_msb(int nbr);
+int					*ft_cpy_stack_to_tab(t_stack **a, int size);
+void				ft_indexation(t_stack **a, int i);
 
 #endif

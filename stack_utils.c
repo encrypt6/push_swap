@@ -6,51 +6,24 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 20:37:15 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/27 20:07:21 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/29 16:57:10 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_max_val(t_stack *top, int field)
+int	ft_max_val(t_stack *top)
 {
 	int	max;
 
 	max = INT_MIN;
 	while (top != NULL)
 	{
-		if (field == 0)
-		{
-			if (max < top->value)
-				max = top->value;
-		}
-		else
-		{
-			if (max < top->index)
-				max = top->index;
-		}
+		if (max < top->value)
+			max = top->value;
 		top = top->next;
 	}
 	return (max);
-}
-
-int	ft_issorted(t_stack *a)
-{
-	t_stack	*current;
-
-	current = a;
-	if (!a)
-		return (EXIT_FAILURE);
-	while (current->next)
-	{
-		if (current->value < current->next->value)
-		{
-			current = current->next;
-		}
-		else
-			return (1);
-	}
-	return (0);
 }
 
 t_stack	*ft_stacklast(t_stack *stack)

@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:42:16 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/27 19:45:17 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/29 16:41:48 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,6 @@
 # include <strings.h>
 # include <assert.h>
 # include <limits.h>
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}t_list;
 
 long			ft_atol(const char *str);
 
@@ -106,4 +100,5 @@ char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(char const *s, char c);
 
 int				*ft_sort_int_tab(int *tab, unsigned int size);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/29 16:44:24 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/07/02 14:34:58 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,14 @@ char				*concat_args(int argc, char **argv);
 
 //args errors management
 void				ft_check_all_errors_create_nodes(t_stack **a, char **argv);
+void				ft_create_nodes(t_stack **a, int nbr);
 int					ft_not_int_error(char *arg);
 int					ft_dupplicates_error(t_stack *a, int nbr);
-void				ft_print_error_free(t_stack **a);
-void				ft_free_stack(t_stack **stack);
+void				ft_print_error_free(t_stack **a, char **argv);
 
-t_stack				*ft_get_prev_node(t_stack *head);
-void				ft_create_nodes(t_stack **a, int nbr);
+//free_utils
+void				ft_free_stack(t_stack **stack);
+void				ft_free_argv(char **argv);
 
 //operations
 void				sa(t_stack **a, int print);

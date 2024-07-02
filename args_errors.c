@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 18:48:30 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/17 12:47:02 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/07/02 14:38:55 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	ft_check_all_errors_create_nodes(t_stack **a, char **argv)
 	{
 		nbr = ft_atol(argv[i]);
 		if (ft_not_int_error(argv[i]) || nbr > INT_MAX || nbr < INT_MIN)
-			ft_print_error_free(a);
+			ft_print_error_free(a, argv);
 		if (ft_dupplicates_error(*a, nbr))
-			ft_print_error_free(a);
+			ft_print_error_free(a, argv);
 		++i;
 		ft_create_nodes(a, nbr);
 	}
@@ -48,37 +48,43 @@ int	ft_not_int_error(char *arg)
 
 int	ft_dupplicates_error(t_stack *a, int nbr)
 {
-	if (a == NULL)
+	t_stack	*temp;
+
+	temp = a;
+	if (temp == NULL)
 		return (0);
-	while (a)
+	while (temp)
 	{
-		if (a->value == nbr)
+		if (temp->value == nbr)
 			return (1);
-		a = a->next;
+		temp = temp->next;
 	}
 	return (0);
 }
 
-void	ft_free_stack(t_stack **stack)
+void	ft_create_nodes(t_stack **a, int nbr)
 {
-	t_stack	*current;
-	t_stack	*tmp;
+	t_stack	*node;
+	t_stack	*head;
 
-	if (stack == NULL)
+	if (a == NULL)
 		return ;
-	current = *stack;
-	while (current)
+	node = malloc(sizeof(t_stack));
+	if (node == NULL)
+		return ;
+	node->next = NULL;
+	node->value = nbr;
+	if (*a == NULL)
 	{
-		tmp = current->next;
-		free(current);
-		current = tmp;
+		*a = node;
 	}
-	*stack = NULL;
-}
-
-void	ft_print_error_free(t_stack **a)
-{
-	ft_free_stack(a);
-	write(2, "Error\n", 6);
-	exit(0);
+	else
+	{
+		head = *a;
+		while (head->next != NULL)
+		{
+			head = head->next;
+		}
+		head->next = node;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:42:16 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/29 16:41:48 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/06/29 17:22:28 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stddef.h>
-# include <stdio.h>
 # include <string.h>
 # include <strings.h>
 # include <assert.h>

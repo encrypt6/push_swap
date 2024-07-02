@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:17:36 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/21 18:49:04 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:42:02 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ static char	*cpy_words(const char *str, char c)
 		j++;
 	}
 	ptr = ft_substr(str, i, count);
+	if (!ptr)
+		return (NULL);
 	return (ptr);
 }
 
@@ -87,7 +89,7 @@ char	**ft_split(char const *s, char c)
 		{
 			ptrs[i] = cpy_words(s, c);
 			if (ptrs[i] == NULL)
-				return (ft_free(ptrs));
+				return (ft_free(ptrs), NULL);
 			s = s + ft_strlen(ptrs[i] + 1);
 			i++;
 		}

@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 15:30:39 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/29 16:49:37 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/07/02 19:01:43 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,8 @@ void	ft_indexation(t_stack **a, int i)
 	head = *a;
 	while ((*a))
 	{
-		while (tab[i])
+		i = 0;
+		while (i < size)
 		{
 			if (tab[i] == (*a)->value)
 			{

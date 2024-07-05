@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/07/02 14:34:58 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/07/05 12:12:48 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,13 @@ void				ft_check_all_errors_create_nodes(t_stack **a, char **argv);
 void				ft_create_nodes(t_stack **a, int nbr);
 int					ft_not_int_error(char *arg);
 int					ft_dupplicates_error(t_stack *a, int nbr);
-void				ft_print_error_free(t_stack **a, char **argv);
+int					ft_is_valid_number(char *nbr);
 
 //free_utils
+void				free_split(char **split);
 void				ft_free_stack(t_stack **stack);
 void				ft_free_argv(char **argv);
+void				ft_print_error_free(t_stack **a, char **argv);
 
 //operations
 void				sa(t_stack **a, int print);

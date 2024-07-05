@@ -6,11 +6,24 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 14:02:24 by elsikira          #+#    #+#             */
-/*   Updated: 2024/07/02 14:27:50 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/07/05 12:04:51 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	free_split(char **split)
+{
+	size_t	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+}
 
 void	ft_free_argv(char **argv)
 {

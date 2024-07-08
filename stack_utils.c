@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 20:37:15 by elsikira          #+#    #+#             */
-/*   Updated: 2024/06/29 16:57:10 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/07/08 20:17:54 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,20 @@ int	ft_max_val(t_stack *top)
 		top = top->next;
 	}
 	return (max);
+}
+
+int	ft_min_val(t_stack *top)
+{
+	int	min;
+
+	min = INT_MAX;
+	while (top != NULL)
+	{
+		if (min > top->value)
+			min = top->value;
+		top = top->next;
+	}
+	return (min);
 }
 
 t_stack	*ft_stacklast(t_stack *stack)

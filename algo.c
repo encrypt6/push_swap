@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:52:54 by elsikira          #+#    #+#             */
-/*   Updated: 2024/07/02 18:51:03 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/07/08 22:20:52 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ void	radix_sort(t_stack **a, t_stack **b)
 	}
 	while (*b)
 		pa(a, b, PRINT);
+}
+
+void	sort_five(t_stack **a, t_stack **b)
+{
+	int	i;
+	int	*tab;
+
+
 }
 
 void	sort_two_three(t_stack **a)

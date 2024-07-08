@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:54:06 by elsikira          #+#    #+#             */
-/*   Updated: 2024/07/05 12:12:48 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/07/08 20:22:16 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ t_stack				*ft_stacklast(t_stack *stack);
 t_stack				*ft_stack_secondlast(t_stack *stack);
 int					ft_stack_size(t_stack *stack);
 int					ft_max_val(t_stack *top);
+int					ft_min_val(t_stack *top);
 
 //checking sort utils
 int					ft_is_reverse_sorted(t_stack *stack);
@@ -72,6 +73,8 @@ int					ft_is_sorted(t_stack *stack);
 //sort algorithm
 void				radix_sort(t_stack **a, t_stack **b);
 void				sort_two_three(t_stack **a);
+void				sort_four(t_stack **a, t_stack **b);
+void				sort_five(t_stack **a, t_stack **b);
 
 //radix sort utils
 void				ft_ra_or_pb(t_stack **a, t_stack **b, int bit_pos);

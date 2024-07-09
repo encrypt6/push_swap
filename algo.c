@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:52:54 by elsikira          #+#    #+#             */
-/*   Updated: 2024/07/08 22:20:52 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/07/09 08:56:53 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,21 @@ void	radix_sort(t_stack **a, t_stack **b)
 		pa(a, b, PRINT);
 }
 
+#include <stdio.h>
+
 void	sort_five(t_stack **a, t_stack **b)
 {
-	int	i;
-	int	*tab;
+	(void)**b;
+	t_stack *temp;
 
+	temp = *a;
+	ft_indexation(a, 0);
+	while ((temp)->index != 0)
+	{
+		(temp) = (temp)->next;
+	}
+	printf("Min_val is %d\n", (temp)->value);
+	printf("Size of a is %d\n", ft_stack_size(*a));
 
 }
 

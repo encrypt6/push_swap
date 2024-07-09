@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:52:54 by elsikira          #+#    #+#             */
-/*   Updated: 2024/07/09 11:41:34 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/07/09 12:06:37 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,32 +32,47 @@ void	radix_sort(t_stack **a, t_stack **b)
 		pa(a, b, PRINT);
 }
 
-#include <stdio.h>
 void	shortest_route(t_stack **a)
 {
-	int	ra;
-	int	rra;
+	t_stack	*tmp;
+	int		ra_cost;
+	int		rra_cost;
 
-	ra = 
+	tmp = *a;
+	ra_cost = 0;
+	rra_cost = 0;
+	while (tmp->value != ft_min_val(*a))
+	{
+		tmp = tmp->next;
+		ra_cost++;
+	}
+	rra_cost = ft_stack_size(*a) - ra_cost;
+	if (ra_cost <= rra_cost)
+	{
+		while (ra_cost-- > 0)
+			ra(a, PRINT);
+	}
+	else
+	{
+		while (rra_cost-- > 0)
+			rra(a, PRINT);
+	}
 }
-
 
 void	sort_five(t_stack **a, t_stack **b)
 {
-	t_stack	*tmp;
 	int	count;
-	(void)**b;
-	tmp = *a;
+
 	count = 0;
 	while (count < 2)
 	{
-		while (tmp->index != ft_min_val(*a))
-		{
-			tmp = tmp->next;
-		}
 		shortest_route(a);
-		//pb(b, a, PRINT);
+		pb(b, a, PRINT);
+		count++;
 	}
+	sort_two_three(a);
+	while (*b)
+		pa(a, b, PRINT);
 }
 
 void	sort_two_three(t_stack **a)

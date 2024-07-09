@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:49:08 by elsikira          #+#    #+#             */
-/*   Updated: 2024/07/09 10:49:49 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/07/09 12:07:37 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ int	main(int argc, char **argv)
 		{
 			if (ft_stack_size(a) <= 3)
 				sort_two_three(&a);
-			//else if (ft_stack_size(a) == 4)
-				//sort_four(&a, &b);
 			else if (ft_stack_size(a) == 5)
 				sort_five(&a, &b);
 			else

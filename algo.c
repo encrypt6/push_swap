@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:52:54 by elsikira          #+#    #+#             */
-/*   Updated: 2024/07/09 08:56:53 by elsikira         ###   ########.fr       */
+/*   Updated: 2024/07/09 11:41:34 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,31 @@ void	radix_sort(t_stack **a, t_stack **b)
 }
 
 #include <stdio.h>
+void	shortest_route(t_stack **a)
+{
+	int	ra;
+	int	rra;
+
+	ra = 
+}
+
 
 void	sort_five(t_stack **a, t_stack **b)
 {
+	t_stack	*tmp;
+	int	count;
 	(void)**b;
-	t_stack *temp;
-
-	temp = *a;
-	ft_indexation(a, 0);
-	while ((temp)->index != 0)
+	tmp = *a;
+	count = 0;
+	while (count < 2)
 	{
-		(temp) = (temp)->next;
+		while (tmp->index != ft_min_val(*a))
+		{
+			tmp = tmp->next;
+		}
+		shortest_route(a);
+		//pb(b, a, PRINT);
 	}
-	printf("Min_val is %d\n", (temp)->value);
-	printf("Size of a is %d\n", ft_stack_size(*a));
-
 }
 
 void	sort_two_three(t_stack **a)
